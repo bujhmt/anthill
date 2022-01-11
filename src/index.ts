@@ -1,12 +1,10 @@
-import {introspect} from '@bujhmt/dev-js';
 import Module from './decorators/module.decorator';
+import {Prospector} from './namespaces';
 
 @Module({queue: ['page?']})
-class Anthill {
-    own: string = 'cock';
+class MyProspector extends Prospector.Module {
+
+    protected onModuleInit(): void | Promise<void> {
+        return undefined;
+    }
 }
-
-const test = new Anthill();
-
-console.log(introspect(test));
-console.log(Object.getOwnPropertyNames(test));

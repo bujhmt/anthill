@@ -22,6 +22,7 @@ module.exports = {
         '@typescript-eslint/explicit-function-return-type': 'off',
         '@typescript-eslint/no-explicit-any': 'off',
         '@typescript-eslint/ban-types': ['warn'],
+        '@typescript-eslint/no-namespace': 'off',
         'no-empty-function': 'off',
         'import/no-unresolved': 'off',
         'import/extensions': 'off',

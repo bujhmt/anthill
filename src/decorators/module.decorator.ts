@@ -1,12 +1,7 @@
-import {Page} from 'puppeteer';
-import {Constructable} from '../interfaces/constructable.interface';
+import {Constructable} from '../core/interfaces/constructable.interface';
 
 export interface ModuleParams {
     queue: string[],
-}
-
-abstract class Tools {
-    protected abstract page: Page;
 }
 
 export default function Module({queue}: ModuleParams) {

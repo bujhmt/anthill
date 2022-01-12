@@ -31,7 +31,8 @@
     },
     "homepage": "https://github.com/bujhmt/web-prospector#readme",
     "dependencies": {
-        "puppeteer": "^13.0.1"
+        "puppeteer": "^13.0.1",
+        "reflect-metadata": "^0.1.13"
     },
     "devDependencies": {
         "@bujhmt/dev-js": "^0.0.3",

@@ -1,10 +1,13 @@
-import {Constructable} from '../core/interfaces/constructable.interface';
+import 'reflect-metadata';
+import {Constructable} from '../core/types';
+import {Prospector} from '../namespaces';
 
 export interface ModuleParams {
-    queue: string[],
+    modules?: Prospector.Module[],
+    workers?: Prospector.Worker[],
 }
 
-export default function Module({queue}: ModuleParams) {
+export default function Module(params: ModuleParams) {
     return <TFunction extends Function>(Constructor: Constructable<TFunction>) => {
         return class extends Constructor {
             constructor(...args) {

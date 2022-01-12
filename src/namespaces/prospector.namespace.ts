@@ -1,13 +1,19 @@
-import {Browser as PuppeteerBrowser, Page as PuppeteerPage} from 'puppeteer';
+// eslint-disable-next-line max-classes-per-file
+import {Browser, Page} from '../core/types';
 
 export namespace Prospector {
-    type Page<TPage = PuppeteerPage> = TPage;
-    type Browser<TBrowser = PuppeteerBrowser> = TBrowser;
+    abstract class ProspectorEntity {
+        constructor(
+            public readonly browser: Browser,
+            public readonly page: Page,
+        ) {}
+    }
 
-    export abstract class Module {
-        protected readonly page: Page;
-        protected readonly browser: Browser;
-
+    export abstract class Module extends ProspectorEntity {
         protected abstract onModuleInit(): void | Promise<void>;
+    }
+
+    export abstract class Worker extends ProspectorEntity {
+
     }
 }
